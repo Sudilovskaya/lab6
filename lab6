@@ -1,0 +1,52 @@
+<html>
+
+	<body>
+	
+		<input type=button value=Начать id="buttonstart" onclick = buttonclick1()>
+		
+		<form onsubmit="buttonclick2()" id="buttonform"></form>
+	
+		<script>
+			function buttonclick1() {
+				
+				buttonstart.onclick = null;
+			
+				buttonform.innerHTML += "<br><br>" + "Заполните поля ниже: " + "<br>";
+				
+				let input0 = document.createElement("input");
+				input0.type = "text";
+				buttonform.append(input0);
+				
+				buttonform.innerHTML += "<br><br>";
+			
+				let input3 = document.createElement("input");
+				input3.type = "date";
+				buttonform.append(input3);
+				
+				buttonform.innerHTML += "<br><br>";
+			
+				let input4 = document.createElement("input");
+				input4.type = "file";
+				buttonform.append(input4);
+				
+				buttonform.innerHTML += "<br><br><br>";
+				
+				let input1 = document.createElement("input");
+				input1.type = "submit";
+				buttonform.append(input1);
+
+			};
+			
+			function buttonclick2() {
+				if (document.forms[0].elements[0].value) {alert(document.forms[0].elements[0].value)} else {alert("Первое поле не заполнено")};
+				
+				if (document.forms[0].elements[1].value) {alert(document.forms[0].elements[1].value)} else {alert("Второе поле не заполнено")};
+				
+				if (document.forms[0].elements[2].value) {alert(document.forms[0].elements[2].value)} else {alert("Третье поле не заполнено")};
+			};
+			
+		</script>
+		
+	</body>
+
+</html>
